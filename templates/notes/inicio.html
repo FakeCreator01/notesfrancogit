@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock title %}
+
+
+
+{% block content %}
+{% if request.user.is_authenticated %}
+  <p>Hola {{request.user}}!</p>
+
+  <h1>NOTAS</h1>
+
+<form method="GET">
+  <input type="text" placeholder=" Buscar Notas" name="buscador" value="{{request.GET.buscar}}">
+  <button type="submit">Buscar</button>
+</form>
+
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Notas</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    	{% for nota in notas %}
+      <tr>
+      
+        <td>{{nota.titulo}}</td>
+        <td><a href="{% url 'notas:editar_nota' nota.id %}">Editar</a></td>
+        <td><a href="{% url 'notas:eliminar_nota' nota.id %}">Borrar</a></td>
+        <td><a href="{% url 'notas:ver_nota' nota.id %}">Ver</a></td>
+      
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>Debes iniciar sesión</p>
+{% endif %}
+
+{% endblock content %}

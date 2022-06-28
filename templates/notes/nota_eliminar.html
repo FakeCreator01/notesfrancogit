@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}Eliminar Nota{% endblock %}
+
+{% block content %}
+
+	<h1>Nota</h1>
+
+	<form method="POST">
+		{% csrf_token %}
+	<h2>¿Desea eliminar la Nota '{{ object }}'?</h2>
+		{{autor_form.as_p}}
+		<button type="submit">Eliminar</button>
+		<a href="{% url 'notas:home' %}">Cancelar</a>
+
+	</form>
+
+{% endblock %}

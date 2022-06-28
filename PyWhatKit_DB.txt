@@ -1,0 +1,5 @@
+Date: 24/5/2022
+Time: 16:1
+Phone Number: +5493415475009
+Message: holi soy un bot de DJANGO (se tiene q enviar a las 16:01)
+--------------------

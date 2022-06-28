@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}Nota{% endblock title %}
+
+
+
+{% block content %}
+
+<h1>NOTA</h1>
+
+<form method="POST">
+  {% csrf_token %}
+{{form.as_p}}
+<button type="submit">Listo</button>
+</form>
+{% endblock content %}

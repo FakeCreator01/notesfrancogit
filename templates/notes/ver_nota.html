@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}Ver Nota{% endblock %}
+
+{% block content %}
+
+	<h1>VER NOTA</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+      <th>Fecha de creación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    
+      <td>{{nota.id}}</td>
+      <td>{{nota.titulo}}</td>>
+      <td>{{nota.descripcion}}</td>
+      <td>{{nota.creado}}</td>
+    
+    </tr>
+
+  </tbody>
+</table>
+
+{% endblock %}
